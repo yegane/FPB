@@ -19,6 +19,8 @@ import SQLite  from 'react-native-sqlite-storage';
 let db = SQLite.openDatabase( {name : 'database' , createFromLocation : '~database.db'});
 global.initialize = true;
 
+import {iconUser} from '../src/images/index';
+
 class Contacts extends React.Component {
 
     constructor(props) {
@@ -93,8 +95,7 @@ class Contacts extends React.Component {
     };
 
     renderImage = (img) => {
-        const localImage = './user.png';
-        return (img !== null ? <Image source={{uri : img}} style={styles.imageContact} resizeMode="cover" /> : <Image source={require(localImage) } style={styles.imageContact} resizeMode="cover" />);
+        return (img !== null ? <Image source={{uri : img}} style={styles.imageContact} resizeMode="cover" /> : <Image source={iconUser} style={styles.imageContact} resizeMode="cover" />);
     };
 
     search = (value) =>{

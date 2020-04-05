@@ -14,6 +14,7 @@ import {
 import {Header} from '../components/header';
 import SQLite from 'react-native-sqlite-storage';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {iconUser} from '../src/images/index';
 
 let db = SQLite.openDatabase({
   name: 'database',
@@ -21,12 +22,11 @@ let db = SQLite.openDatabase({
 });
 
 function renderImage(img) {
-  const localImage = './user.png';
   return img !== null ? (
     <Image source={{uri: img}} style={styles.imageContact} resizeMode="cover" />
   ) : (
     <Image
-      source={require(localImage)}
+      source={iconUser}
       style={styles.imageContact}
       resizeMode="cover"
     />
